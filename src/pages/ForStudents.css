@@ -1,0 +1,408 @@
+.for-students-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.students-header {
+  background: linear-gradient(135deg, #5cbfc6 0%, #4a9ea5 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.students-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.students-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.students-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 20px 80px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+}
+
+.filters-sidebar {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.filters-sidebar h3 {
+  color: #5cbfc6;
+  margin-bottom: 1.5rem;
+}
+
+.filter-group {
+  margin-bottom: 1.5rem;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+  outline: none;
+  border-color: #5cbfc6;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-secondary {
+  width: 100%;
+  background: #f1f1f1;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background: #e0e0e0;
+}
+
+.btn-contact {
+  background: #5cbfc6;
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+  background: #4a9ea5;
+  transform: translateY(-2px);
+}
+
+.listings-content {
+  min-height: 400px;
+}
+
+.loading,
+.no-listings {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.listings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.listing-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.listing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.listing-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.listing-content {
+  padding: 1.5rem;
+}
+
+.listing-content h3 {
+  color: #5cbfc6;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.location {
+  color: #666;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rent {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.listing-details {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+}
+
+.listing-details span {
+  color: #666;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.amenities {
+  color: #5cbfc6;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.listing-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+}
+
+.available {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+  .students-container {
+    grid-template-columns: 1fr;
+    padding: 40px 15px 60px;
+  }
+  
+  .filters-sidebar {
+    position: static;
+  }
+  
+  .listings-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .students-header {
+    padding: 50px 15px;
+  }
+
+  .students-header h1 {
+    font-size: 2rem;
+  }
+
+  .students-header p {
+    font-size: 1.1rem;
+  }
+  
+  .students-container {
+    padding: 30px 15px 50px;
+  }
+
+  .filters-sidebar {
+    padding: 1.5rem;
+  }
+
+  .listings-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .listing-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .students-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .students-header p {
+    font-size: 1rem;
+  }
+
+  .filters-sidebar h3 {
+    font-size: 1.2rem;
+  }
+
+  .filter-group input,
+  .filter-group select {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .listing-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .rent {
+    font-size: 1.3rem;
+  }
+}
+
+/* Auth Required Section */
+.auth-required {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.auth-required-content {
+  background: white;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  text-align: center;
+}
+
+.lock-icon {
+  font-size: 4rem;
+  color: #5cbfc6;
+  margin-bottom: 1.5rem;
+}
+
+.auth-required-content h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.auth-required-content p {
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.auth-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.auth-actions .btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.auth-actions .btn-primary {
+  background: #5cbfc6;
+  color: white;
+}
+
+.auth-actions .btn-primary:hover {
+  background: #4a9ea5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(92, 191, 198, 0.3);
+}
+
+.auth-actions .btn-secondary {
+  background: white;
+  color: #5cbfc6;
+  border: 2px solid #5cbfc6;
+}
+
+.auth-actions .btn-secondary:hover {
+  background: #5cbfc6;
+  color: white;
+}
+
+.auth-benefits {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #f0f0f0;
+  text-align: left;
+}
+
+.auth-benefits h3 {
+  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.auth-benefits ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.auth-benefits li {
+  color: #555;
+  font-size: 1rem;
+  padding-left: 1rem;
+}
+
+@media (max-width: 768px) {
+  .auth-required-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .auth-required-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .lock-icon {
+    font-size: 3rem;
+  }
+
+  .auth-actions {
+    flex-direction: column;
+  }
+
+  .auth-actions .btn {
+    width: 100%;
+  }
+}

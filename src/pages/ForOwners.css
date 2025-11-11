@@ -1,0 +1,226 @@
+.for-owners-page {
+  min-height: 100vh;
+  background: #f8f9fa;
+}
+
+.owners-header {
+  background: linear-gradient(135deg, #5cbfc6 0%, #4a9ea5 100%);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.owners-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.owners-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.owners-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px 80px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+}
+
+.benefits {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.benefits h2 {
+  color: #5cbfc6;
+  margin-bottom: 1.5rem;
+}
+
+.benefits ul {
+  list-style: none;
+  padding: 0;
+}
+
+.benefits li {
+  padding: 0.75rem 0;
+  color: #666;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.listing-form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.listing-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.listing-form h3 {
+  color: #333;
+  margin-top: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #5cbfc6;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #5cbfc6;
+}
+
+.form-group small {
+  color: #999;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background: #5cbfc6;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #4a9ea5;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.status-message {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #d4edda;
+  color: #155724;
+}
+
+@media (max-width: 968px) {
+  .owners-container {
+    grid-template-columns: 1fr;
+    padding: 40px 15px 60px;
+  }
+  
+  .owners-header {
+    padding: 50px 15px;
+  }
+
+  .owners-header h1 {
+    font-size: 2rem;
+  }
+
+  .owners-header p {
+    font-size: 1.1rem;
+  }
+
+  .benefits {
+    padding: 1.5rem;
+  }
+
+  .benefits h2 {
+    font-size: 1.5rem;
+  }
+
+  .benefits li {
+    font-size: 1rem;
+  }
+
+  .listing-form-container {
+    padding: 1.5rem;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .owners-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .owners-header p {
+    font-size: 1rem;
+  }
+
+  .listing-form-container {
+    padding: 1.2rem;
+  }
+
+  .listing-form h3 {
+    font-size: 1.2rem;
+  }
+
+  .form-group label {
+    font-size: 0.95rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 12px 25px;
+  }
+}
