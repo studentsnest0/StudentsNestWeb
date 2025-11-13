@@ -10,6 +10,12 @@ import {
   FaShieldAlt,
 } from "react-icons/fa";
 import "./Home.css";
+import rooms1 from "../assets/rooms1.jpg";
+import rooms2 from "../assets/rooms2.jpg";
+import rooms3 from "../assets/rooms3.jpg";
+import rooms4 from "../assets/rooms4.jpg";
+import rooms5 from "../assets/rooms5.jpg";
+import rooms6 from "../assets/rooms6.jpg";
 
 function Home() {
   return (
@@ -40,6 +46,33 @@ function Home() {
             <div className="hero-stat">
               <span className="stat-number">50+</span>
               <span className="stat-label">Cities</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="gallery">
+        <div className="container">
+          <h2>Explore Rooms</h2>
+          <p className="gallery-sub">A quick look at some of the rooms listed on Students Nest</p>
+          <div className="gallery-grid">
+            <div className="gallery-item">
+              <img src={rooms1} alt="Room 1" />
+            </div>
+            <div className="gallery-item">
+              <img src={rooms2} alt="Room 2" />
+            </div>
+            <div className="gallery-item">
+              <img src={rooms3} alt="Room 3" />
+            </div>
+            <div className="gallery-item">
+              <img src={rooms4} alt="Room 4" />
+            </div>
+            <div className="gallery-item">
+              <img src={rooms5} alt="Room 5" />
+            </div>
+            <div className="gallery-item">
+              <img src={rooms6} alt="Room 6" />
             </div>
           </div>
         </div>
