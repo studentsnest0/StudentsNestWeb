@@ -16,6 +16,10 @@ import rooms3 from "../assets/rooms3.jpg";
 import rooms4 from "../assets/rooms4.jpg";
 import rooms5 from "../assets/rooms5.jpg";
 import rooms6 from "../assets/rooms6.jpg";
+import rooms7 from "../assets/rooms7.jpg";
+import rooms8 from "../assets/rooms8.jpg";
+import rooms9 from "../assets/rooms9.jpg";
+import rooms10 from "../assets/rooms10.jpg";
 
 function Home() {
   return (
@@ -54,7 +58,9 @@ function Home() {
       <section className="gallery">
         <div className="container">
           <h2>Explore Rooms</h2>
-          <p className="gallery-sub">A quick look at some of the rooms listed on Students Nest</p>
+          <p className="gallery-sub">
+            A quick look at some of the rooms listed on Students Nest
+          </p>
           <div className="gallery-grid">
             <div className="gallery-item">
               <img src={rooms1} alt="Room 1" />
@@ -73,6 +79,18 @@ function Home() {
             </div>
             <div className="gallery-item">
               <img src={rooms6} alt="Room 6" />
+            </div>
+            <div className="gallery-item">
+              <img src={rooms7} alt="Room 7" />
+            </div>
+            <div className="gallery-item">
+              <img src={rooms8} alt="Room 8" />
+            </div>
+            <div className="gallery-item">
+              <img src={rooms9} alt="Room 9" />
+            </div>
+            <div className="gallery-item">
+              <img src={rooms10} alt="Room 10" />
             </div>
           </div>
         </div>
