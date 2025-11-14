@@ -212,6 +212,24 @@ function Home() {
         </div>
       </section>
 
+      <section className="contact-cta">
+        <div className="container">
+          <h2>Can't Find What You're Looking For?</h2>
+          <p>
+            If you're having trouble finding the perfect accommodation, don't worry! 
+            Let us know your requirements and we'll help you find the right place.
+          </p>
+          <a 
+            href="https://form.typeform.com/to/GXPNs691" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="btn btn-primary"
+          >
+            Get in Touch
+          </a>
+        </div>
+      </section>
+
       <section className="stats">
         <div className="container">
           <div className="stats-grid">

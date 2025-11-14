@@ -477,6 +477,77 @@
   color: #4a9ea5;
 }
 
+/* Contact CTA Section */
+.contact-cta {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: patternMove 20s linear infinite;
+}
+
+.contact-cta .container {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.contact-cta h2 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-cta p {
+  font-size: 1.3rem;
+  margin-bottom: 3rem;
+  opacity: 0.95;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.contact-cta .btn {
+  padding: 20px 50px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  background: white;
+  color: #764ba2;
+  border: 3px solid white;
+}
+
+.contact-cta .btn:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  background: #f8f9fa;
+  color: #5a3682;
+}
+
 /* Stats Section */
 .stats {
   padding: 80px 20px;
@@ -554,13 +625,15 @@
   .features,
   .how-it-works,
   .for-owners-cta,
+  .contact-cta,
   .stats {
     padding: 60px 15px;
   }
 
   .features h2,
   .how-it-works h2,
-  .for-owners-cta h2 {
+  .for-owners-cta h2,
+  .contact-cta h2 {
     font-size: 2rem;
     margin-bottom: 2rem;
   }
@@ -618,6 +691,18 @@
     font-size: 1.1rem;
   }
 
+  .contact-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-cta .btn {
+    width: 100%;
+    max-width: 280px;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+  }
+
   .stats-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
@@ -667,7 +752,8 @@
     font-size: 1.8rem;
   }
 
-  .for-owners-cta h2 {
+  .for-owners-cta h2,
+  .contact-cta h2 {
     font-size: 2rem;
   }
 
