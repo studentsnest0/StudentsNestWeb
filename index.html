@@ -28,7 +28,7 @@
     <meta property="twitter:description" content="Find safe, affordable, and verified student accommodation across Pakistan. Connect directly with property owners. Free for students." />
     <meta property="twitter:image" content="/og-image.jpg" />
 
-    <!-- Chatbot Widget -->
+<!-- Chatbot Widget -->
 <div id="sn-chat-btn">Chat with StudentNest</div>
 
 <div id="sn-chat-window">
@@ -39,6 +39,7 @@
     <button id="sn-chat-send">Send</button>
   </div>
 </div>
+
 
     <style>
   #sn-chat-btn {
@@ -120,58 +121,9 @@
     font-size: 13px;
   }
 </style>
-<script>
-  const SN_WEBHOOK_URL = https://n8n.nafran.com/webhook/a3d29c2d-db41-4eed-973d-d56d4b32b7fa/chat; // <-- paste n8n Production URL
 
-  const btn = document.getElementById("sn-chat-btn");
-  const win = document.getElementById("sn-chat-window");
-  const messages = document.getElementById("sn-chat-messages");
-  const input = document.getElementById("sn-chat-input");
-  const sendBtn = document.getElementById("sn-chat-send");
 
-  btn.addEventListener("click", () => {
-    win.style.display = win.style.display === "flex" ? "none" : "flex";
-  });
-
-  sendBtn.addEventListener("click", sendMessage);
-  input.addEventListener("keydown", (e) => {
-    if (e.key === "Enter") sendMessage();
-  });
-
-  function addMessage(text, from) {
-    const div = document.createElement("div");
-    div.className = "sn-msg " + (from === "user" ? "sn-msg-user" : "sn-msg-bot");
-    div.textContent = text;
-    messages.appendChild(div);
-    messages.scrollTop = messages.scrollHeight;
-  }
-
-  async function sendMessage() {
-    const text = input.value.trim();
-    if (!text) return;
-
-    addMessage(text, "user");
-    input.value = "";
-
-    try {
-      const res = await fetch(SN_WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text })
-      });
-
-      const data = await res.json();
-
-      // adjust this depending on how your n8n flow returns data
-      const reply = data.reply || data.message || "Got your question. Our system processed it.";
-      addMessage(reply, "bot");
-    } catch (err) {
-      console.error(err);
-      addMessage("Sorry, something went wrong talking to StudentNest server.", "bot");
-    }
-  }
-</script>
-
+  
     
     <!-- Additional SEO -->
     <meta name="theme-color" content="#1E90FF" />
@@ -182,3 +134,64 @@
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const SN_WEBHOOK_URL = const SN_WEBHOOK_URL = "https://n8n.nafran.com/webhook/a3d29c2d-db41-4eed-973d-d56d4b32b7fa/chat";
+
+
+    const btn = document.getElementById("sn-chat-btn");
+    const win = document.getElementById("sn-chat-window");
+    const messages = document.getElementById("sn-chat-messages");
+    const input = document.getElementById("sn-chat-input");
+    const sendBtn = document.getElementById("sn-chat-send");
+
+    if (!btn || !win) {
+      console.error("Chat elements not found in DOM");
+      return;
+    }
+
+    win.style.display = "none";
+
+    btn.addEventListener("click", () => {
+      win.style.display = win.style.display === "flex" ? "none" : "flex";
+    });
+
+    sendBtn.addEventListener("click", sendMessage);
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") sendMessage();
+    });
+
+    function addMessage(text, from) {
+      const div = document.createElement("div");
+      div.className = "sn-msg " + (from === "user" ? "sn-msg-user" : "sn-msg-bot");
+      div.textContent = text;
+      messages.appendChild(div);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    async function sendMessage() {
+      const text = input.value.trim();
+      if (!text) return;
+
+      addMessage(text, "user");
+      input.value = "";
+
+      try {
+        const res = await fetch(SN_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: text })
+        });
+
+        const data = await res.json();
+        const reply = data.reply || data.message || "Got your question, processing it.";
+        addMessage(reply, "bot");
+      } catch (err) {
+        console.error(err);
+        addMessage("Sorry, something went wrong talking to StudentNest server.", "bot");
+      }
+    }
+  });
+</script>
+
