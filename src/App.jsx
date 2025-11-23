@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { supabase } from './lib/supabase';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ChatWidget from './components/ChatWidget';
 import Home from './pages/Home';
 import HowItWorks from './pages/HowItWorks';
 import Contact from './pages/Contact';
@@ -66,6 +67,7 @@ function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />
+        <ChatWidget />
       </div>
     </Router>
   );
