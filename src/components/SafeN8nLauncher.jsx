@@ -112,7 +112,7 @@ function SafeN8nLauncher() {
         metadata: {},
         showWelcomeScreen: false,
         defaultLanguage: 'en',
-        initialMessages: ['Hi there! 👋', 'My name is Nathan. How can I assist you today?'],
+        initialMessages: ['Hi there! 👋', 'Welcome to StudentsNest. How can we assist you today?'],
         i18n: {
           en: {
             title: 'Hi there! 👋',
