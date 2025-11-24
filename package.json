@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@n8n/chat": "^0.67.0",
     "@supabase/supabase-js": "^2.78.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",

@@ -38,7 +38,28 @@
   </head>
   <body>
     <div id="root"></div>
+    <div id="n8n-chat"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Cleanup any n8n injected styles or modified elements (restore original styles)
+      document.addEventListener('DOMContentLoaded', () => {
+        try {
+          const s = document.getElementById('n8n-style-override');
+          if (s) s.remove();
+
+          document.querySelectorAll('[data-n8n-original-style]').forEach(el => {
+            const original = el.getAttribute('data-n8n-original-style') || '';
+            if (original) el.setAttribute('style', original);
+            else el.removeAttribute('style');
+            el.removeAttribute('data-n8n-original-style');
+            el.removeAttribute('data-n8n-visible');
+            el.removeAttribute('data-n8nHasListener');
+          });
+        } catch (err) {
+          // ignore
+        }
+      });
+    </script>
   </body>
 </html>
 

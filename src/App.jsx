@@ -3,8 +3,9 @@ import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { supabase } from './lib/supabase';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import ChatWidget from './components/ChatWidget';
+// n8n chat integration temporarily removed to restore app UI
 import Home from './pages/Home';
+import SafeN8nLauncher from './components/SafeN8nLauncher';
 import HowItWorks from './pages/HowItWorks';
 import Contact from './pages/Contact';
 import ForOwners from './pages/ForOwners';
@@ -66,8 +67,8 @@ function App() {
           />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
+        <SafeN8nLauncher />
         <Footer />
-        <ChatWidget />
       </div>
     </Router>
   );
